@@ -1,0 +1,78 @@
+#Write a program to solve a 0-1 Knapsack problem using dynamic
+programming or branch and bound strategy.
+def knapSack(W, wt, val, n): 
+  
+    # Base Case 
+    if n == 0 or W == 0: 
+        return 0
+  
+    # If weight of the nth item is 
+    # more than Knapsack of capacity W, 
+    # then this item cannot be included 
+    # in the optimal solution 
+    if (wt[n-1] > W): 
+        return knapSack(W, wt, val, n-1) 
+  
+    # return the maximum of two cases: 
+    # (1) nth item included 
+    # (2) not included 
+    else: 
+        return max( 
+            val[n-1] + knapSack( 
+                W-wt[n-1], wt, val, n-1), 
+            knapSack(W, wt, val, n-1)) 
+  
+# end of function knapSack 
+  
+  
+# Driver Code 
+if __name__ == '__main__': 
+    profit = [60, 100, 120] 
+    weight = [10, 20, 30] 
+    W = 50
+    n = len(profit) 
+    print (knapSack(W, weight, profit, n)) 
+
+
+
+******************************************************************************************************
+What is Dynamic Programming?
+● Dynamic Programming is also used in optimization problems. Like divide-and-conquer method,
+Dynamic Programming solves problems by combining the solutions of subproblems.
+● Dynamic Programming algorithm solves each sub-problem just once and then saves its answer in a
+table, thereby avoiding the work of re-computing the answer every time.
+● Two main properties of a problem suggest that the given problem can be solved using Dynamic
+Programming. These properties are overlapping sub-problems and optimal substructure.
+● Dynamic Programming also combines solutions to sub-problems. It is mainly used where the
+solution of one sub-problem is needed repeatedly. The computed solutions are stored in a table, so
+that these don’t have to be re-computed. Hence, this technique is needed where overlapping subproblem exists.
+● For example, Binary Search does not have overlapping sub-problem. Whereas recursive program of
+Fibonacci numbers have many overlapping sub-problems.
+Steps of Dynamic Programming Approach
+Dynamic Programming algorithm is designed using the following four steps −
+● Characterize the structure of an optimal solution.
+● Recursively define the value of an optimal solution.
+● Compute the value of an optimal solution, typically in a bottom-up fashion.
+● Construct an optimal solution from the computed information.
+Applications of Dynamic Programming Approach
+● Matrix Chain Multiplication
+● Longest Common Subsequence
+● Travelling Salesman Problem
+Department of Computer Engineering Course : Laboratory Practice III
+Knapsack Problem
+You are given the following-
+● A knapsack (kind of shoulder bag) with limited weight capacity.
+● Few items each having some weight and value.
+The problem statesWhich items should be placed into the knapsack such that-
+● The value or profit obtained by putting the items into the knapsack is maximum.
+● And the weight limit of the knapsack does not exceed.
+Knapsack Problem Variants
+Knapsack problem has the following two variants1. Fractional Knapsack Problem
+2. 0/1 Knapsack Problem
+Department of Computer Engineering Course : Laboratory Practice III
+0/1 Knapsack ProblemIn 0/1 Knapsack Problem,
+● As the name suggests, items are indivisible here.
+● We can not take a fraction of any item.
+● We have to either take an item completely or leave it completely.
+● It is solved using a dynamic programming approach.
+  

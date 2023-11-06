@@ -1,0 +1,154 @@
+#Write a program to implement Huffman Encoding using a greedy strategy
+import heapq
+
+# Creating Huffman tree node
+class node:
+    def __init__(self,freq,symbol,left=None,right=None):
+        self.freq=freq # frequency of symbol
+        self.symbol=symbol # symbol name (character)
+        self.left=left # node left of current node
+        self.right=right # node right of current node
+        self.huff= '' # # tree direction (0/1)
+
+    def __lt__(self,nxt): # Check if curr frequency less than next nodes freq
+        return self.freq<nxt.freq
+
+def printnodes(node,val=''):
+    newval=val+str(node.huff)
+    # if node is not an edge node then traverse inside it
+    if node.left: 
+        printnodes(node.left,newval)
+    if node.right: 
+        printnodes(node.right,newval)
+
+    # if node is edge node then display its huffman code
+    if not node.left and not node.right:
+        print("{} -> {}".format(node.symbol,newval))
+
+if __name__=="__main__":
+    chars = ['a', 'b', 'c', 'd', 'e', 'f']
+    freq = [ 5, 9, 12, 13, 16, 45]
+    nodes=[]    
+
+    for i in range(len(chars)): # converting characters and frequencies into huffman tree nodes
+        heapq.heappush(nodes, node(freq[i],chars[i]))
+
+    while len(nodes)>1:
+        left=heapq.heappop(nodes)
+        right=heapq.heappop(nodes)
+
+        left.huff = 0
+        right.huff = 1
+        # Combining the 2 smallest nodes to create new node as their parent
+        newnode = node(left.freq + right.freq , left.symbol + right.symbol , left , right)
+        # node(freq,symbol,left,right)
+        heapq.heappush(nodes, newnode)
+
+    printnodes(nodes[0]) # Passing root of Huffman Tree
+
+
+********************************************************************************************************************************************************************************************
+# Huffman Coding in python
+#Method 2
+
+string = 'BCAADDDCCACACAC'
+
+
+# Creating tree nodes
+class NodeTree(object):
+
+    def __init__(self, left=None, right=None):
+        self.left = left
+        self.right = right
+
+    def children(self):
+        return (self.left, self.right)
+
+    def nodes(self):
+        return (self.left, self.right)
+
+    def __str__(self):
+        return '%s_%s' % (self.left, self.right)
+
+
+# Main function implementing huffman coding
+def huffman_code_tree(node, left=True, binString=''):
+    if type(node) is str:
+        return {node: binString}
+    (l, r) = node.children()
+    d = dict()
+    d.update(huffman_code_tree(l, True, binString + '0'))
+    d.update(huffman_code_tree(r, False, binString + '1'))
+    return d
+
+
+# Calculating frequency
+freq = {}
+for c in string:
+    if c in freq:
+        freq[c] += 1
+    else:
+        freq[c] = 1
+freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+
+nodes = freq
+
+while len(nodes) > 1:
+    (key1, c1) = nodes[-1]
+    (key2, c2) = nodes[-2]
+    nodes = nodes[:-2]
+    node = NodeTree(key1, key2)
+    nodes.append((node, c1 + c2))
+
+    nodes = sorted(nodes, key=lambda x: x[1], reverse=True)
+
+huffmanCode = huffman_code_tree(nodes[0][0])
+
+print(' Char | Huffman code ')
+print('----------------------')
+for (char, frequency) in freq:
+    print(' %-4r |%12s' % (char, huffmanCode[char]))
+
+*****************************************************************************************************************************************************************************************
+
+What is a Greedy Method?
+● A greedy algorithm is an approach for solving a problem by selecting the best option available
+at the moment. It doesn't worry whether the current best result will bring the overall optimal
+result.
+● The algorithm never reverses the earlier decision even if the choice is wrong. It works in a topdown approach.
+● This algorithm may not produce the best result for all the problems. It's because it always goes
+for the local best choice to produce the global best result.
+Advantages of Greedy Approach
+● The algorithm is easier to describe.
+● This algorithm can perform better than other algorithms (but, not in all cases).
+Drawback of Greedy Approach
+● As mentioned earlier, the greedy algorithm doesn't always produce the optimal solution. This is
+the major disadvantage of the algorithm
+● For example, suppose we want to find the longest path in the graph below from root to leaf.
+Greedy Algorithm
+1. To begin with, the solution set (containing answers) is empty.
+2. At each step, an item is added to the solution set until a solution is reached.
+3. If the solution set is feasible, the current item is kept.
+4. Else, the item is rejected and never considered again.
+Huffman Encoding
+● Huffman Coding is a technique of compressing data to reduce its size without losing any of the
+details. It was first developed by David Huffman.
+● Huffman Coding is generally useful to compress the data in which there are frequently occurring
+Department of Computer Engineering Course : Laboratory Practice III
+3
+characters.
+● Huffman Coding is a famous Greedy Algorithm.
+● It is used for the lossless compression of data.
+● It uses variable length encoding.
+● It assigns variable length code to all the characters.
+● The code length of a character depends on how frequently it occurs in the given text.
+● The character which occurs most frequently gets the smallest code.
+● The character which occurs least frequently gets the largest code.
+● It is also known as Huffman Encoding.
+Prefix Rule-
+● Huffman Coding implements a rule known as a prefix rule.
+● This is to prevent the ambiguities while decoding.
+● It ensures that the code assigned to any character is not a prefix of the code assigned to any other
+character
+Major Steps in Huffman CodingThere are two major steps in Huffman Coding1. Building a Huffman Tree from the input characters.
+2. Assigning code to the characters by traversing the Huffman Tree.

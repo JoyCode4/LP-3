@@ -1,0 +1,141 @@
+Title: survey report on types of Blockchains and its real time use cases.
+Problem Statement: Write and survey report on blockchain technology
+
+Theory:
+Blockchain Concepts:
+Blockchain can be defined as an immutable distributed digital ledger, which is secured using advanced
+cryptography, replicated among the peer nodes in the peer-to-peer network, and uses consensus mechanism to
+agree upon the transaction log, whereas control is decentralized. With this definition, paper identifies following
+concepts as the core concepts to unwrap the meaning of blockchain—immutable, distributed, digital ledger,
+cryptography, peer-to-peer network, consensusmechanism, decentralization. In accounting, a ledger is a place to
+record and store all thetransactions with regard to an entity. A digital ledger could be a computer file, or database,
+or even distributed database like blockchain, where transactions are recorded electronically. Blockchain
+transaction ledger is pretty unique to other ledgers in a manner, which ensures that transaction log is
+computationally impractical to change, as long as honest nodes in the network control the majority of CPU power,
+thus making it immutable. The origins of ledger can be traced back to over5000 years ago in Mesopotamia. The
+Earliest and simplest form of recording transactions is called single entry accounting, which enters transactions
+into a list to keep track of adding or deducting assets. The single entry accounting was managed by owners or
+family members, as this kind of recordings are error-prone as well as difficult to track down, when recorded
+fraudulently. Double entry accounting added a clear strategy to identify and remove errors, where there are two
+entries recorded against each transaction, so that the ledger is balanced all the time. Grigg proposed tripleentry
+accounting in 2005, an alternative to traditional double entry accounting, which secures transactions using
+cryptography in order to make it difficult to change. Blockchain implements triple entry accounting concept to
+permanently store transactions in blockchain, ensuring that the sender has authority to execute non-reversible
+transactions using public-key cryptography.
+
+Cryptography can be defined as techniques used for secure communication to protect confidentialinformation, in
+the presence of adversaries. Blockchain uses concepts from public keycryptosystems to verify the authority of
+the user to execute transactions, and cryptographic hashfunctions to achieve consensus between network nodes
+on blockchain data. The use of public keycryptosystems to provide digital signatures was suggested by Diffie and
+Hellman. Digital signatures, whether based on public key cryptosystems, conventional encryption functions,
+onprobabilistic computations, or other techniques share several important properties in common—such as an
+easier way for the sender to generate the personal digital signature, convenient way forreceiver to verify the
+sender of the message, but must be impossible to generate someone else’sdigital signature by others. In public
+key cryptography, there exists two keys called public andprivate and a function or cypher algorithm to encrypt
+the original text into a ciphertext using theprivate encryption key. Sender or owner generates the public–private
+key pair and keepsthe privatekey as the confidential key to encrypt information; public key is distributed to anyone
+to verify thatthe information is digitally signed by the original owner. This public key cryptography techniqueis
+used in blockchain to verify the ownership of coins or tokens,
+whenever transferring coins or tokens. One another important concept used in blockchain to secureits data integrity
+is cryptographic hash function—a one-way function that maps strings of arbitrarysize into a bit string of fixed size
+called hash using a mathematical algorithm. An algorithm requiredfor blockchain hash functions has three main
+properties—same input should always result in with the same output hash, given the hash no algorithm could
+produce the original input, small changesin input results in completely different output hash. Bitcoin uses SHA256 hash function, whereasEthereum uses Ethash, and Litecoin uses Scrypt when hashing its block data.
+
+Blockchain Types
+According to our survey findings, blockchains can be categorized into two main types namely
+permissionless blockchains and permissioned blockchains.
+-Permissionless
+Blockchains
+Permissionless blockchains do not enforce any restrictions on its nodes; anyone can openly read data, inspect
+data, and participate in validation and writing of the data in accordance with the consensus protocol of the
+particular blockchain. Bitcoin, Ethereum and many other cryptocurrencies run on permissionless blockchains.
+These blockchains are considered fully decentralized and secured using advanced cryptography, whereas
+economic incentives are provided for users who work to keep the integrity of the network. The transactions are
+completely irreversible on a permissionless blockchain by its design, meaning once confirmed by its nodes the
+blockchain transactions cannot be reversed. Due to the security considerations andstrict restrictions, transaction
+throughput of a permissionless blockchain is comparatively lesser than one of a permissioned blockchain. Permissionless blockchains are fully decentralized and transparent.
+
+-Permissioned
+Blockchains:
+Permissioned blockchains restrict the writing access for a limited set of participants, and a consensus mechanism
+is used to validate the writing of data among its privileged participants. Read access could either be open to
+anyone or closed to the public based on the requirement of the permissioned blockchain. This type of blockchains
+has evolved as an alternative to initial permissionless blockchains, to address the requirement for running
+blockchain technology among a set of known and identifiable participants that have to be explicitly responsible
+to the blockchain network, while participants need not be fully trusting each other. The permissioned
+blockchains are mainly useful for business and social applications, which requires blockchain distributed
+ledger technology without the need of a in centifying cryptocurrency. Based on the read access
+mentioned, permissioned blockchains are further divided as open and closed—open permissioned blockchains
+are partially decentralized, anyone can read its data, whereas closed permissioned blockchains are fully
+centralized, data is visible only to the participants.
+We thoroughly believe blockchain technology is rather necessary only for permissionless blockchains, and open
+permissioned blockchains. Closed permissioned blockchains can be argued as restricted distributed databases
+which are facelifted with the blockchain term. The initial idea of introducing blockchain concept was to remove
+centralization and add transparency to everyone to read and update its data. Open permissioned blockchains
+mostly adhere to this principle of transparency even though somewhat centralized in writing its data and could be
+useful for applications such as identity systems, academic certification systems, where anyone can read its
+data but only a certain set of participants are privileged to write the data into blockchain. Closed permissioned
+blockchains are fully centralized and also not transparent to anyone, dismantling the core concept of a
+blockchain. Therefore, these blockchains can be replaced with distributed database systems with restrictions
+implemented on top of it. For example, a supply chain management system for a private organization can be
+implemented without the concepts of blockchain. In order to support our argument on closed permissioned
+blockchains, we have presented a characteristic comparison of different blockchain types compared with
+restricted distributed database system. The comparison shows that all of the characteristics in closed permissioned
+blockchains are comparatively similar to that of restricted database systems. In addition to this categorization,
+there is also another blockchain categorization called public, consortium, and private blockchains In simple terms,
+public blockchains are permissionless blockchains, whereas consortium and private blockchains fall into
+permissioned blockchains
+
+
+Real Time blockchain use cases
+Blockchain technology’s core characteristics include decentralization, transparency,
+immutability, and automation. These elements can be applied to various industries,
+creating a multitude of use cases. Here are what we believe to be the most pertinent
+blockchain use cases for enterprises, institutions, and governments.
+Capital Markets
+For capital markets, blockchain unlocks easier, cheaper, and faster access to capital. It reducesthe barriers to
+issuance and enables peer-to-peer trading, faster and more transparent settlement and clearing, reduced costs,
+decreased counterparty risks, and streamlined auditing and compliance.
+Central Bank Digital Currencies CBDC
+CBDCs are a digital form of central bank money that offers central banks unique advantages at the retail and
+wholesale levels, including increased financial access for individual customers anda more efficient infrastructure
+for interbank settlements.
+Decentralized Finance (DeFi)
+Decentralized finance—DeFi—refers to the shift from traditional, centralized financial systemsto peer-to-peer
+finance enabled by decentralized technologies built on Ethereum. Millions are building and participating in this
+new economic system that is setting new standards for financial access, opportunity, and trust.
+Digital Identity
+A blockchain-based digital identity system provides a unified, interoperable, and tamper-proof infrastructure with
+key benefits to enterprises, users, and IoT management systems. The solution protects against theft and provides
+individuals greater sovereignty over their data.
+Finance
+Financial services struggle with archaic operational processes, slow payment settlements, limited transparency,
+and security vulnerabilities. Blockchain enhances the efficient digitization of financial instruments, which
+increases liquidity, lowers cost of capital, and reduces counterparty risk.
+Energy and Sustainability
+Oil and gas companies suffer from siloed infrastructures and a lack of transparency, efficiency, and optimization.
+Enterprise-grade blockchain solutions can significantly increase process efficiencies and reduce costs associated
+with oil and gas operations and distribution.
+Department of Computer Engineering Course : Laboratory Practice
+Department of Computer Engineering, NBN Sinhgad School of Engineering, Pune
+Global Trade and Commerce
+Major trading companies and consortiums are recognizing the transformative impact of blockchain in operating
+global supply chains, managing trade finance, and unlocking new business models. ConsenSys’ blockchain
+products offer secure digitization, enabling the tokenization of existing documents, letters of credit, and more.
+Government and the Public Sector
+Ethereum blockchain technology allows governments to build trust, improve accountability and responsiveness,
+increase efficiency, reduce costs, and create high-performing government functions with more secure, agile, and
+cost-effective structures.
+Healthcare and the Life Sciences
+Blockchain-based healthcare solutions will enable faster, more efficient, and more secure medical data
+management and medical supply tracking. This could significantly improve patient care, facilitate the
+advancement to medical discoveries, and ensure the authenticity of drugs circulating global markets.
+Real Estate
+Enterprise Ethereum enables the digitization of assets and financial instruments. This enhances fractionalization
+of ownership, expanded access to global markets, increased liquidity, and democratized access to real estate
+investment opportunities.
+Supply Chain Management
+Existing global supply chains are inefficient, poorly tracked, and oftentimes exploitative. Blockchain can
+facilitate accurate asset tracking, enhanced licensing of services, products, and software, and transparency into
+the provenance of consumer goods, from sourcing to the pointof consumption

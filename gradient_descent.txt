@@ -1,0 +1,63 @@
+***
+Implement Gradient Descent Algorithm to find the local minima of a function.
+For example, find the local minima of the function y=(x+3)² starting from the point x=2.
+***
+import numpy as np
+import matplotlib.pyplot as plt
+import sympy as sp
+
+
+def gradient_descent(starting_x,learning_rate,num_iterations):
+    x=starting_x
+    x_history=[x]
+    y_history=[(x+3)**2]
+    for i in range(num_iterations):
+        gradient=2*(x+3)
+        x=x-learning_rate*gradient
+        x_history.append(x)
+        y_history.append((x+3)**2)
+    return x_history,y_history
+
+starting_x=2
+learning_rate=0.1
+num_iterations=10
+
+x_history,y_history=gradient_descent(starting_x,learning_rate,num_iterations)
+
+x_vals=np.linspace(-10,5,400)
+y_vals=(x_vals+3)**2
+plt.plot(x_vals,y_vals,label='y=(x+3)^2')
+
+plt.scatter(x_history,y_history,color='red',marker='x',label=' Gradient descent y=(x+3)^2')
+plt.xlabel=('x')
+plt.xlabel=('y')
+plt.title('Gradient descent for y=(x+3)^2')
+plt.legend()
+plt.grid(True)
+plt.show()
+*************************************************************************************************************************
+Gradient Descent Algorithm iteratively calculates the next point using gradient at the current position, scales it (by a learning rate) and subtracts obtained value from the current position (makes a step). It subtracts the value because we want to minimise the function (to maximise it would be adding). This process can be written as:
+
+
+There’s an important parameter η which scales the gradient and thus controls the step size. In machine learning, it is called learning rate and have a strong influence on performance.
+
+The smaller learning rate the longer GD converges, or may reach maximum iteration before reaching the optimum point
+If learning rate is too big the algorithm may not converge to the optimal point (jump around) or even to diverge completely.
+In summary, Gradient Descent method’s steps are:
+
+choose a starting point (initialisation)
+calculate gradient at this point
+make a scaled step in the opposite direction to the gradient (objective: minimise)
+repeat points 2 and 3 until one of the criteria is met:
+maximum number of iterations reached
+step size is smaller than the tolerance (due to scaling or a small gradient).
+
+
+Gradient Descent is known as one of the most commonly used optimization algorithms to train machine learning models by means of minimizing errors between actual and expected results. Further, gradient descent is also used to train Neural Networks.
+
+In mathematical terminology, Optimization algorithm refers to the task of minimizing/maximizing an objective function f(x) parameterized by x. Similarly, in machine learning, optimization is the task of minimizing the cost function parameterized by the model's parameters. The main objective of gradient descent is to minimize the convex function using iteration of parameter updates. Once these machine learning models are optimized, these models can be used as powerful tools for Artificial Intelligence and various computer science applications.
+
+In this tutorial on Gradient Descent in Machine Learning, we will learn in detail about gradient descent, the role of cost functions specifically as a barometer within Machine Learning, types of gradient descents, learning rates, etc.
+
+What is Gradient Descent or Steepest Descent?
+Gradient descent was initially discovered by "Augustin-Louis Cauchy" in mid of 18th century. Gradient Descent is defined as one of the most commonly used iterative optimization algorithms of machine learning to train the machine learning and deep learning models. It helps in finding the local minimum of a function.

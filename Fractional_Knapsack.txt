@@ -1,0 +1,56 @@
+# Write a program to solve a fractional Knapsack problem using a greedy method
+class Item:
+    def __init__(self, profit, weight):
+        self.profit = profit
+        self.weight = weight
+
+def fractionalKnapsack(w, arr):
+    arr.sort(key=lambda x: x.profit/x.weight, reverse=True)
+    finalValue = 0.0
+    for item in arr:
+        if w >= item.weight:
+            finalValue += item.profit
+            w -= item.weight
+        else:
+            finalValue += item.profit * (w/item.weight)
+            break
+    return finalValue
+
+if __name__ == "__main__":
+    n = int(input("Enter number of items-\n"))
+    arr = []
+    for i in range(n):
+        profit = int(input("Enter profit of item " + str(i + 1) + "-\n"))
+        weight = int(input("Enter weight of item " + str(i + 1) + "-\n"))
+        arr.append(Item(profit, weight))
+    w = int(input("Enter capacity of knapsack-\n"))
+    print("Maximum value in knapsack: ", fractionalKnapsack(w, arr))
+
+
+****************************************************************************************************************************************
+Follow the given steps to solve the problem using the above approach:
+
+Calculate the ratio (profit/weight) for each item.
+Sort all the items in decreasing order of the ratio.
+Initialize res = 0, curr_cap = given_cap.
+Do the following for every item i in the sorted order:
+If the weight of the current item is less than or equal to the remaining capacity then add the value of that item into the result
+Else add the current item as much as we can and break out of the loop.
+Return res.
+
+Knapsack Problem Variants
+Knapsack problem has the following two variants1. Fractional Knapsack Problem
+2. 0/1 Knapsack Problem
+Fractional Knapsack ProblemIn Fractional Knapsack Problem,
+● As the name suggests, items are divisible here.
+● We can even put the fraction of any item into the knapsack if taking the complete item is not
+Department of Computer Engineering Course : Laboratory Practice III
+possible.
+● It is solved using the Greedy Method.
+Fractional Knapsack Problem Using Greedy MethodFractional knapsack problem is solved using greedy method in the following stepsStep-01:
+For each item, compute its value / weight ratio.
+Step-02:
+Arrange all the items in decreasing order of their value / weight ratio.
+Step-03:
+Start putting the items into the knapsack beginning from the item with the highest ratio.
+Put as many items as you can into the knapsack.

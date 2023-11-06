@@ -1,0 +1,84 @@
+nterms = int(input("How many terms? "))
+n1, n2 = 0, 1
+count = 0
+if nterms <= 0:
+      print("Please enter a positive integer")
+elif nterms == 1:
+      print("Fibonacci sequence upto",nterms,":")
+      print(n1)
+else:
+    print("Fibonacci sequence:")
+    while count < nterms:
+        print(n1)
+        nth = n1 + n2
+        n1 = n2
+        n2 = nth
+        count += 1
+*************************************************************************************************************************************
+def recur_fibo(n):
+    if n <= 1:
+        return n
+    else:
+        return(recur_fibo(n-1) + recur_fibo(n-2))
+nterms = int(input("How many terms? "))
+# check if the number of terms is valid
+if nterms <= 0:
+    print("Plese enter a positive integer")
+else:
+    print("Fibonacci sequence:")
+for i in range(nterms):
+    print(recur_fibo(i))
+
+************************************************************************************************************************************
+Introduction to Fibonacci numbers
+● The Fibonacci series, named after Italian mathematician Leonardo Pisano Bogollo, later
+known as Fibonacci, is a series (sum) formed by Fibonacci numbers denoted as Fn. The numbers in
+Fibonacci sequence are given as: 0, 1, 1, 2, 3, 5, 8, 13, 21, 38, . . .
+● In a Fibonacci series, every term is the sum of the preceding two terms, starting from 0 and 1
+as first and second terms. In some old references, the term '0' might be omitted.
+What is the Fibonacci Series?
+● The Fibonacci series is the sequence of numbers (also called Fibonacci numbers), where
+every number is the sum of the preceding two numbers, such that the first two terms are '0' and '1'.
+● In some older versions of the series, the term '0' might be omitted. A Fibonacci series can thus
+be given as, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, . . . It can be thus be observed that every term can be
+calculated by adding the two terms before it.
+● Given the first term, F0 and second term, F1 as '0' and '1', the third term here can be given as,
+F2 = 0 + 1 = 1
+Similarly,
+F3 = 1 + 1 = 2
+F4 = 2 + 1 = 3
+Given a number n, print n-th Fibonacci Number.
+
+Fibonacci Sequence Formula
+The Fibonacci sequence of numbers “Fn” is defined using the recursive relation with the seed values
+F0=0 and F1=1:
+Fn = Fn-1+Fn-2
+Here, the sequence is defined using two different parts, such as kick-off and recursive relation.
+The kick-off part is F0=0 and F1=1.
+The recursive relation part is Fn = Fn-1+Fn-2.
+It is noted that the sequence starts with 0 rather than 1. So, F5 should be the 6th term of the sequence.
+Examples:
+Input : n = 2
+Output : 1
+Input : n = 9
+Output : 34
+The list of Fibonacci numbers are calculated as follows:
+Fn Fibonacci Number
+0 0
+1 1
+2 1
+3 2
+4 3
+5 5
+7 13
+8 21
+9 34
+… and so on. … and so on.
+Method 1 (Use Non-recursion)
+A simple method that is a direct recursive implementation of mathematical recurrence relation is
+given above.
+First, we’ll store 0 and 1 in F[0] and F[1], respectively.
+Next, we’ll iterate through array positions 2 to n-1. At each position i, we store the sum of the two
+preceding array values in F[i].
+Finally, we return the value of F[n-1], giving us the number at position n in the sequence.
+Here’s a visual representation of this process:
